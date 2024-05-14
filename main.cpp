@@ -43,7 +43,15 @@ void processArray(int** array, int n, int m) {
   cout << endl; 
  } 
 } 
-
+ 
+// Функция для освобождения памяти, занятой двумерным массивом 
+void deleteArray(int** array, int n) { 
+ for (int i = 0; i < n; i++) { 
+  delete[] array[i]; 
+ } 
+ delete[] array; 
+} 
+ 
 int main() { 
  setlocale(LC_ALL, ""); 
  srand(time(NULL)); 
